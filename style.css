@@ -1,0 +1,125 @@
+:root {
+    --dark-bg: #0D1117;      
+    --card-bg: rgba(30, 41, 59, 0.5); 
+    --border-color: rgba(255, 255, 255, 0.1);
+    --text-light: #F0F2F5;
+    --text-medium: #8D99AE;
+    --accent-primary: #8B5CF6;
+    --accent-secondary: #4338CA;
+    --accent-primary-faded: rgba(139, 92, 246, 0.15);
+    --accent-secondary-faded: rgba(67, 56, 202, 0.15);
+    --correct: #A3E635;
+    --incorrect: #F87171;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--dark-bg);
+    background-image: 
+        radial-gradient(circle at top left, var(--accent-primary-faded), transparent 40%),
+        radial-gradient(circle at bottom right, var(--accent-secondary-faded), transparent 40%);
+    color: var(--text-light);
+    transition: background-color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.gradient-text {
+    background-image: linear-gradient(90deg, var(--accent-primary), #6366F1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.stat-card, #test-area {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#test-area {
+    padding: 1.5rem;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.25); 
+}
+
+.stat-card p:first-child {
+    color: var(--text-medium);
+}
+
+#textToType {
+    color: var(--text-medium);
+}
+
+.cursor {
+    position: relative;
+}
+
+.cursor::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 10%;
+    bottom: 10%;
+    width: 2px;
+    background-color: var(--accent-primary);
+    animation: blink 1.0s infinite;
+    border-radius: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { 
+        opacity: 1; 
+    }
+    50% { 
+        opacity: 0; 
+    }
+}
+
+.correct {
+    color: var(--correct);
+}
+
+.incorrect {
+    color: var(--incorrect);
+    background-color: rgba(248, 113, 113, 0.15);
+    border-radius: 3px;
+}
+
+#userInput {
+    caret-color: transparent;
+    background-color: transparent;
+    outline: none;
+    resize: none;
+}
+
+#resetButton {
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    color: var(--text-light);
+    font-weight: bold;
+    border-radius: 0.5rem;
+    padding: 0.75rem 2rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+    transition: all 0.3s ease;
+}
+
+#resetButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.35);
+}
+
+#resetButton:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.4);
+}

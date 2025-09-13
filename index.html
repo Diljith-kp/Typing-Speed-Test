@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-4xl mx-auto">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold gradient-text">Typing Speed Test</h1>
+            <p class="text-gray-400 mt-2">How fast can you type? Let's find out!</p>
+        </header>
+
+        <div id="stats" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 text-center">
+            <div class="stat-card">
+                <p class="text-sm font-medium">WPM</p>
+                <p id="wpm" class="text-3xl font-bold">0</p>
+            </div>
+            <div class="stat-card">
+                <p class="text-sm font-medium">CPM</p>
+                <p id="cpm" class="text-3xl font-bold">0</p>
+            </div>
+            <div class="stat-card">
+                <p class="text-sm font-medium">Accuracy</p>
+                <p id="accuracy" class="text-3xl font-bold">100%</p>
+            </div>
+            <div class="stat-card">
+                <p class="text-sm font-medium">Time</p>
+                <p id="timer" class="text-3xl font-bold">0s</p>
+            </div>
+        </div>
+
+        <div id="test-area" class="relative p-6 rounded-lg">
+            <div id="textToType" class="text-2xl leading-relaxed tracking-wider select-none"></div>
+            <textarea id="userInput" class="absolute top-0 left-0 w-full h-full p-6 text-2xl leading-relaxed tracking-wider text-transparent bg-transparent z-10" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+        </div>
+
+        <div class="text-center mt-8">
+            <button id="resetButton">
+                Reset Test
+            </button>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

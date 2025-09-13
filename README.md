@@ -6,7 +6,7 @@ It helps you test and improve your typing speed and accuracy with real-time resu
 ---
 
 ## 🚀 Live Demo  
-👉 [Try it here](https://diljith-kp.github.io/Typing-Speed-Test)  
+👉 [Try it here](https://diljith-kp.github.io/Typing-Speed-Tester)  
 
 ---
 
